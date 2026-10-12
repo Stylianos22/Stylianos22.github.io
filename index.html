@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stylianos Pharmakas — Business Analysis Portfolio</title>
+<meta name="description" content="Stylianos Pharmakas, ICT student at Fontys in Eindhoven, looking for a business analysis internship from February 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#12313B}a:hover{color:#0A1F26}
+.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-0.01em}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#4A6670;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:6px;font-size:15px;font-weight:600;text-decoration:none;box-sizing:border-box}
+.btn-primary{background:#E8A33D;color:#12313B;border:1px solid #E8A33D}
+.btn-primary:hover{background:#D9932C;color:#12313B}
+.btn-ghost{background:transparent;color:#12313B;border:1px solid #12313B}
+.btn-ghost:hover{background:#12313B;color:#FFFFFF}
+.btn-ghost-light{background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,0.5)}
+.btn-ghost-light:hover{background:#FFFFFF;color:#12313B}
+.tag{display:inline-block;font-size:13px;line-height:1;padding:8px 12px;border-radius:999px;background:#F1F6F7;color:#12313B;border:1px solid #DCE7EA}
+.part-label{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4A6670;flex:0 0 120px;padding-top:3px}
+.part-text{flex:1 1 300px;min-width:0;margin:0;font-size:15px;line-height:1.6;color:#22404A}
+.navlink{font-size:14px;color:#22404A;text-decoration:none;padding:12px 0}
+.navlink:hover{color:#12313B;text-decoration:underline}
+html:not(.lenis){scroll-behavior:smooth}
+[id]{scroll-margin-top:72px}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(232,163,61,0.55)}70%{box-shadow:0 0 0 10px rgba(232,163,61,0)}100%{box-shadow:0 0 0 0 rgba(232,163,61,0)}}
+.enter{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.08s}.d2{animation-delay:.2s}.d3{animation-delay:.32s}.d4{animation-delay:.44s}.d5{animation-delay:.6s}.d6{animation-delay:.9s}
+.pulse{animation:pulse 2.4s ease-out infinite}
+.bob{display:inline-block;animation:bob 1.8s ease-in-out infinite}
+.cue{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:14px;color:#4A6670;text-decoration:none}
+.cue:hover{color:#12313B}
+.card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px -14px rgba(18,49,59,0.35);border-color:#B9CDD2}
+.shot{transition:background-color .25s ease}
+.card:hover .shot{background-color:#E6EFF1}
+.tag{transition:background-color .2s ease,border-color .2s ease}
+.tag:hover{background:#FFFFFF;border-color:#E8A33D}
+.zoom{display:block;width:100%;padding:0;margin:0;border:1px solid #DCE7EA;border-radius:6px;overflow:hidden;background:#FFFFFF;cursor:zoom-in}
+.zoom img{transition:transform .35s ease}
+.zoom:hover img{transform:scale(1.03)}
+.zoom:focus-visible{outline:2px solid #E8A33D;outline-offset:3px}
+.zoom-close{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.45);background:rgba(18,49,59,0.6);color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.zoom-close:hover{background:#FFFFFF;color:#12313B}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.zoom-overlay{animation:fadein .2s ease both}
+.progress{display:none}
+@supports (animation-timeline: view()){
+.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 5% entry 45%}
+.line-grow{transform-origin:0 50%;animation:grow linear both;animation-timeline:view();animation-range:entry 20% entry 70%}
+}
+@supports (animation-timeline: scroll()){
+.progress{display:block;position:fixed;top:0;left:0;right:0;height:3px;background:#E8A33D;transform-origin:0 50%;z-index:20;animation:grow linear both;animation-timeline:scroll(root)}
+}
+@media (prefers-reduced-motion: reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation:none !important;transition:none !important}
+.progress{display:none}
+}
+</style>
+<style>
+dialog.zoom-dialog{padding:0;border:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
+dialog.zoom-dialog::backdrop{background:rgba(10,31,38,0.92)}
+dialog.zoom-dialog[open]{display:flex;align-items:center;justify-content:center;padding:72px 24px 24px;box-sizing:border-box;cursor:zoom-out;animation:fadein .2s ease both}
+dialog.zoom-dialog img{display:block;max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;background:#FFFFFF}
+</style>
+<link rel="stylesheet" href="vendor/lenis.css">
+</head>
+<body>
+<div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #12313B; background: #FFFFFF; width: 100%; min-height: 100vh">
+
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- Top bar -->
+  <header style="position: sticky; top: 0; z-index: 10; background: #FFFFFF; border-bottom: 1px solid #E3ECEE">
+    <div style="max-width: 880px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; min-height: 64px">
+      <a href="#top" class="serif" style="font-size: 18px; text-decoration: none; color: #12313B">Stylianos Pharmakas</a>
+      <nav aria-label="Sections" style="display: flex; flex-wrap: wrap; gap: 0 24px">
+        <a class="navlink" href="#work">Work</a>
+        <a class="navlink" href="#skills">Skills</a>
+        <a class="navlink" href="#education">Education</a>
+        <a class="navlink" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 1. Hero -->
+  <section id="top" style="max-width: 880px; margin: 0 auto; padding: 88px 20px 72px; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 40px">
+      <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <p class="enter d1" style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #12313B">
+          <span class="pulse" aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #E8A33D; display: inline-block"></span>
+          Internship from Feb 2027
+        </p>
+        <h1 class="serif enter d2" style="margin: 0; font-size: clamp(40px, 7vw, 64px); line-height: 1.05; color: #12313B">Stylianos Pharmakas</h1>
+        <p class="enter d3" style="margin: 0; font-size: clamp(18px, 2.4vw, 22px); line-height: 1.4; color: #22404A">Business Analysis &amp; Process Improvement</p>
+        <p class="enter d3" style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A6670; max-width: 520px">ICT student at Fontys University of Applied Sciences, Eindhoven. I map processes, find root causes and turn client needs into clear, validated solutions.</p>
+        <div class="enter d4" style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
+          <a class="btn btn-primary" href="Stylianos_Pharmakas_CV.pdf" download="Stylianos_Pharmakas_CV.pdf">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 10l5 5 5-5"></path><path d="M5 21h14"></path></svg>
+            Download CV
+          </a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/stylianos-pharmakas" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <a class="cue enter d6" href="#work">
+          See my client projects
+          <span class="bob" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+        </a>
+      </div>
+      <div class="enter d5" style="flex: 0 0 auto">
+        <div role="img" aria-label="Photo placeholder" style="width: 200px; height: 200px; border-radius: 50%; background: #F1F6F7; border: 1px solid #DCE7EA; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #4A6670">Photo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Highlights -->
+  <section aria-label="Highlights" style="max-width: 880px; margin: 0 auto; padding: 0 20px 80px; box-sizing: border-box">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+      <div class="card reveal" style="border: 1px solid #E3ECEE; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+        <span class="line-grow" aria-hidden="true" style="width: 32px; height: 2px; background: #E8A33D; display: block"></span>
+        <p style="margin: 0; font-size: 16px; font-weight: 600; color: #12313B">Graded Excellent</p>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4A6670">DAF project semester</p>
+      </div>
+      <div class="card reveal" style="border: 1px solid #E3ECEE; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+        <span class="line-grow" aria-hidden="true" style="width: 32px; height: 2px; background: #E8A33D; display: block"></span>
+        <p style="margin: 0; font-size: 16px; font-weight: 600; color: #12313B">Real client projects</p>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4A6670">DAF, Plainwear, Amexio</p>
+      </div>
+      <div class="card reveal" style="border: 1px solid #E3ECEE; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+        <span class="line-grow" aria-hidden="true" style="width: 32px; height: 2px; background: #E8A33D; display: block"></span>
+        <p style="margin: 0; font-size: 16px; font-weight: 600; color: #12313B">Business analysis + Generative AI</p>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #4A6670">Process thinking, applied with AI</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Case studies -->
+  <section id="work" style="background: #F1F6F7; border-top: 1px solid #E3ECEE; border-bottom: 1px solid #E3ECEE">
+    <div style="max-width: 880px; margin: 0 auto; padding: 80px 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p class="eyebrow reveal">Case studies</p>
+        <h2 class="serif reveal" style="margin: 0; font-size: clamp(28px, 4vw, 36px); line-height: 1.15">Selected work</h2>
+      </div>
+
+      <!-- DAF -->
+      <article class="card reveal" style="background: #FFFFFF; border: 1px solid #DCE7EA; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 24px">
+        <div style="display: flex; flex-wrap: wrap; gap: 24px">
+          <div style="flex: 999 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 4px; background: #12313B; color: #FFFFFF">Real client</span>
+              <span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 4px; background: #E8A33D; color: #12313B">Graded Excellent</span>
+            </div>
+            <h3 class="serif" style="margin: 0; font-size: 24px; line-height: 1.2">IT Service Desk Automation</h3>
+            <p style="margin: 0; font-size: 15px; color: #22404A"><strong style="font-weight: 600">DAF Trucks</strong> · Business Analyst &amp; client contact</p>
+            <p style="margin: 0; font-size: 14px; color: #4A6670">Sep 2025 – Jan 2026</p>
+          </div>
+          <figure style="flex: 1 1 300px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; align-self: flex-start">
+            <button type="button" class="zoom" data-src="images/daf-support-hub-prototype.png" aria-label="Enlarge image: Digital Support Hub prototype"><img loading="lazy" src="images/daf-support-hub-prototype.png" alt="Prototype of the Digital Support Hub: start the AI Support Assistant first, or create a ticket, check my tickets or search self-help" style="display: block; width: 100%; height: auto"></button>
+            <figcaption style="font-size: 12px; line-height: 1.4; color: #4A6670">Support hub prototype · AI assistant first · click to enlarge</figcaption>
+          </figure>
+        </div>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid #E3ECEE">
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid #E3ECEE">
+            <span class="part-label">The problem</span>
+            <p class="part-text">DAF's internal IT Service Desk was overloaded and many calls went unanswered. Before proposing anything, we had to find out why.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid #E3ECEE">
+            <span class="part-label">What I did</span>
+            <p class="part-text">I was my team's contact with DAF and handled the meetings, emails and follow-up. After mapping how support requests flowed, I proposed one starting point for every employee: a Digital Support Hub. The AI assistant comes first and gives step-by-step help. A ticket is only created if the assistant can't solve the problem. Employees can also follow their tickets and search common fixes themselves. I backed the design with a business case (ROI and break-even) and KPIs agreed with DAF.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0 0">
+            <span class="part-label">Outcome</span>
+            <p class="part-text">DAF validated the new support flow, and the project was graded Excellent.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Plainwear -->
+      <article class="card reveal" style="background: #FFFFFF; border: 1px solid #DCE7EA; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 24px">
+        <div style="display: flex; flex-wrap: wrap; gap: 24px">
+          <div style="flex: 999 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 4px; background: #12313B; color: #FFFFFF">Real client</span>
+            </div>
+            <h3 class="serif" style="margin: 0; font-size: 24px; line-height: 1.2">Store Performance Reporting</h3>
+            <p style="margin: 0; font-size: 15px; color: #22404A"><strong style="font-weight: 600">Plainwear</strong> · Business Analyst &amp; Scrum Master</p>
+            <p style="margin: 0; font-size: 14px; color: #4A6670">Feb – Jun 2026</p>
+          </div>
+          <figure style="flex: 1 1 300px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; align-self: flex-start">
+            <button type="button" class="zoom" data-src="images/plainwear-dashboard.png" aria-label="Enlarge image: Plainwear dashboard"><img loading="lazy" src="images/plainwear-dashboard.png" alt="Plainwear store performance dashboard in Power BI, with figures blurred" style="display: block; width: 100%; height: auto"></button>
+            <figcaption style="font-size: 12px; line-height: 1.4; color: #4A6670">Power BI dashboard · figures blurred · click to enlarge</figcaption>
+          </figure>
+        </div>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid #E3ECEE">
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid #E3ECEE">
+            <span class="part-label">The problem</span>
+            <p class="part-text">Plainwear's CFO followed store performance through a manual Excel report that took months to put together.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid #E3ECEE">
+            <span class="part-label">What I did</span>
+            <p class="part-text">As Business Analyst and Scrum Master, I mapped how the report was made and ranked the requirements with Plainwear. One key choice was a like-for-like view: a store is only compared with last year if a fair comparison is possible, and every excluded store shows the reason. On one screen the CFO sees the best and worst stores, revenue per product group, and this year against last year, filtered by country, month, product group or brand.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0 0">
+            <span class="part-label">Outcome</span>
+            <p class="part-text">A Power BI dashboard replaced the manual Excel report. Figures are blurred here to protect client data.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Amexio -->
+      <article class="card reveal" style="background: #FFFFFF; border: 1px solid #DCE7EA; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 24px">
+        <div style="display: flex; flex-wrap: wrap; gap: 24px">
+          <div style="flex: 999 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 4px; background: #12313B; color: #FFFFFF">Real client</span>
+              <span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 4px; background: #FFFFFF; color: #12313B; border: 1px solid #B9CDD2">In progress</span>
+            </div>
+            <h3 class="serif" style="margin: 0; font-size: 24px; line-height: 1.2">AI Test-Data Generator</h3>
+            <p style="margin: 0; font-size: 15px; color: #22404A"><strong style="font-weight: 600">Amexio</strong> · GenAI Architect</p>
+            <p style="margin: 0; font-size: 14px; color: #4A6670">Sep 2026 – now</p>
+          </div>
+          <figure style="flex: 1 1 300px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; align-self: flex-start">
+            <button type="button" class="zoom" data-src="images/amexio-document-generator.png" aria-label="Enlarge image: document generator prototype"><img loading="lazy" src="images/amexio-document-generator.png" alt="Document generator prototype: an AI-written, watermarked fake accident statement with facts filled in from the case file" style="display: block; width: 100%; height: auto"></button>
+            <figcaption style="font-size: 12px; line-height: 1.4; color: #4A6670">Generator prototype · all data fake · click to enlarge</figcaption>
+          </figure>
+        </div>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid #E3ECEE">
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid #E3ECEE">
+            <span class="part-label">The problem</span>
+            <p class="part-text">Amexio needs large sets of realistic documents to test document management systems, without using anyone's real data.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid #E3ECEE">
+            <span class="part-label">What I did</span>
+            <p class="part-text">I'm one of two GenAI Architects in a team of six. I turned the client's answers into a clear scope and strict data rules: fully fake data, marked "AI-generated fake data", no real names and never on production servers. Our design splits the work. The AI writes the text of each document and leaves placeholders. Code then fills in every name, date and amount from one shared case file. That keeps all documents in a case consistent, like the accident statement, claim form and decision letter of one car insurance claim.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0 0">
+            <span class="part-label">Outcome</span>
+            <p class="part-text">In progress. The first milestone is one complete, realistic case, with the number of documents set in a configuration file.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ASML scenario -->
+      <article class="card reveal" style="background: #FFFFFF; border: 1px solid #DCE7EA; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 24px">
+        <div style="display: flex; flex-wrap: wrap; gap: 24px">
+          <div style="flex: 999 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 4px; background: #FFFFFF; color: #12313B; border: 1px solid #12313B">School case study</span>
+            </div>
+            <h3 class="serif" style="margin: 0; font-size: 24px; line-height: 1.2">Invoice Automation</h3>
+            <p style="margin: 0; font-size: 15px; color: #22404A"><strong style="font-weight: 600">ASML scenario</strong> · Business Analyst</p>
+            <p style="margin: 0; font-size: 14px; color: #4A6670">Feb – Jun 2026</p>
+          </div>
+          <figure style="flex: 1 1 300px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; align-self: flex-start">
+            <button type="button" class="zoom" data-src="images/invoice-process-tobe.png" aria-label="Enlarge image: to-be invoice process"><img loading="lazy" src="images/invoice-process-tobe.png" alt="To-be invoice process modelled in BPMN, from receipt to payment batch" style="display: block; width: 100%; height: auto"></button>
+            <figcaption style="font-size: 12px; line-height: 1.4; color: #4A6670">To-be process (BPMN) · click to enlarge</figcaption>
+          </figure>
+        </div>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid #E3ECEE">
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid #E3ECEE">
+            <span class="part-label">The problem</span>
+            <p class="part-text">In this case, ASML's supplier invoices were handled on paper.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid #E3ECEE">
+            <span class="part-label">What I did</span>
+            <p class="part-text">I modelled the new process in BPMN, a standard notation for process diagrams. Paper invoices are scanned and read automatically. Each invoice is checked against the purchase order and the goods receipt (a three-way match). A full match is approved and added to the payment batch without anyone touching it. Only exceptions reach a person: a junior employee reviews mismatches, and a senior employee handles disputes. Invoices without a purchase order number go back to the supplier.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 16px 0 0">
+            <span class="part-label">Outcome</span>
+            <p class="part-text">A design aimed at 85% of invoices processed fully automatically, so people only handle the exceptions.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4. Skills -->
+  <section id="skills" style="max-width: 880px; margin: 0 auto; padding: 80px 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <p class="eyebrow reveal">Skills</p>
+      <h2 class="serif reveal" style="margin: 0; font-size: clamp(28px, 4vw, 36px); line-height: 1.15">What I work with</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 14px">
+        <h3 style="margin: 0; font-size: 15px; font-weight: 600; padding-bottom: 10px; border-bottom: 1px solid #E3ECEE">Business analysis</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <span class="tag">Process mapping (BPMN)</span>
+          <span class="tag">Requirements analysis</span>
+          <span class="tag">Business case &amp; KPIs</span>
+          <span class="tag">Stakeholder management</span>
+        </div>
+      </div>
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 14px">
+        <h3 style="margin: 0; font-size: 15px; font-weight: 600; padding-bottom: 10px; border-bottom: 1px solid #E3ECEE">Generative AI</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <span class="tag">Prompt design</span>
+          <span class="tag">RAG — AI that answers from company documents</span>
+          <span class="tag">AI process automation</span>
+        </div>
+      </div>
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 14px">
+        <h3 style="margin: 0; font-size: 15px; font-weight: 600; padding-bottom: 10px; border-bottom: 1px solid #E3ECEE">Tools</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <span class="tag">Power BI</span>
+          <span class="tag">Excel</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Python</span>
+          <span class="tag">Power Automate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Education -->
+  <section id="education" style="border-top: 1px solid #E3ECEE">
+    <div style="max-width: 880px; margin: 0 auto; padding: 80px 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p class="eyebrow reveal">Education</p>
+        <h2 class="serif reveal" style="margin: 0; font-size: clamp(28px, 4vw, 36px); line-height: 1.15">Where I studied</h2>
+      </div>
+      <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+        <li class="reveal" style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 20px 0; border-top: 1px solid #E3ECEE">
+          <span style="flex: 0 0 170px; font-size: 14px; color: #4A6670; padding-top: 2px">Feb 2025 – now</span>
+          <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+            <p style="margin: 0; font-size: 17px; font-weight: 600; display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #E8A33D; display: inline-block"></span>Bachelor ICT — Fontys University of Applied Sciences</p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A6670">Propedeuse completed. Semester 2 graded Excellent.</p>
+          </div>
+        </li>
+        <li class="reveal" style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 20px 0; border-top: 1px solid #E3ECEE">
+          <span style="flex: 0 0 170px; font-size: 14px; color: #4A6670; padding-top: 2px">2022 – 2024</span>
+          <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+            <p style="margin: 0; font-size: 17px; font-weight: 600">Data Science — TU Eindhoven</p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A6670">Not completed. I switched for a more practical business focus.</p>
+          </div>
+        </li>
+        <li class="reveal" style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 20px 0; border-top: 1px solid #E3ECEE; border-bottom: 1px solid #E3ECEE">
+          <span style="flex: 0 0 170px; font-size: 14px; color: #4A6670; padding-top: 2px">Graduated Jun 2021</span>
+          <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+            <p style="margin: 0; font-size: 17px; font-weight: 600">High School Diploma — American Academy Larnaca</p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A6670">Private school.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 6. Contact -->
+  <footer id="contact" style="background: #12313B; color: #FFFFFF">
+    <div style="max-width: 880px; margin: 0 auto; padding: 80px 20px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #E8A33D">Contact</p>
+        <h2 class="serif reveal" style="margin: 0; font-size: clamp(28px, 4vw, 40px); line-height: 1.15; color: #FFFFFF">Looking for a business analysis intern from February 2027?</h2>
+      </div>
+      <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; border-top: 1px solid rgba(255,255,255,0.18); padding-top: 28px">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <span style="font-size: 13px; color: #B9CDD2">Email</span>
+          <a href="mailto:stylianospha@gmail.com" style="color: #FFFFFF; font-size: 16px; text-decoration: none; padding: 6px 0">stylianospha@gmail.com</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <span style="font-size: 13px; color: #B9CDD2">Phone</span>
+          <a href="tel:+31642778088" style="color: #FFFFFF; font-size: 16px; text-decoration: none; padding: 6px 0">+31 6 42 77 80 88</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <span style="font-size: 13px; color: #B9CDD2">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/stylianos-pharmakas" target="_blank" rel="noopener" style="color: #FFFFFF; font-size: 16px; text-decoration: none; padding: 6px 0">in/stylianos-pharmakas</a>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a class="btn btn-primary" href="Stylianos_Pharmakas_CV.pdf" download="Stylianos_Pharmakas_CV.pdf">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 10l5 5 5-5"></path><path d="M5 21h14"></path></svg>
+          Download CV
+        </a>
+        <a class="btn btn-ghost-light" href="mailto:stylianospha@gmail.com">Email me</a>
+      </div>
+      <p style="margin: 0; font-size: 13px; color: #B9CDD2; border-top: 1px solid rgba(255,255,255,0.18); padding-top: 24px">Stylianos Pharmakas · Eindhoven, Netherlands</p>
+    </div>
+  </footer>
+
+</div>
+
+<dialog class="zoom-dialog" id="zoom-dialog" aria-label="Enlarged image">
+  <img id="zoom-img" src="" alt="">
+  <button type="button" class="zoom-close" id="zoom-close" aria-label="Close enlarged image"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+</dialog>
+<script src="vendor/lenis.min.js"></script>
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (window.Lenis && !reduce) {
+    window.lenis = new Lenis({ autoRaf: true, lerp: 0.12, anchors: true });
+  }
+  var dlg = document.getElementById('zoom-dialog');
+  var img = document.getElementById('zoom-img');
+  function close() { if (dlg.open) dlg.close(); }
+  document.querySelectorAll('.zoom').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var src = btn.getAttribute('data-src');
+      if (typeof dlg.showModal !== 'function') { window.open(src, '_blank'); return; }
+      img.src = src;
+      img.alt = btn.querySelector('img').alt;
+      dlg.showModal();
+      if (window.lenis) window.lenis.stop();
+    });
+  });
+  dlg.addEventListener('click', close);
+  document.getElementById('zoom-close').addEventListener('click', close);
+  dlg.addEventListener('close', function () { if (window.lenis) window.lenis.start(); });
+})();
+</script>
+</body>
+</html>
